@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,34 +10,77 @@
     * {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
+    /* Simple scrolling animation for long text */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Container for scrolling text */
+    .scroll-container {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    /* Text that will scroll */
+    .scroll-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll 9s linear infinite;
+      /* Duplicate the text for seamless loop */
+      padding-right: 50px;
+    }
+
+    .group:hover .scroll-text {
+      animation-play-state: paused;
+    }
+
+    /* Normal text that doesn't scroll */
+    .normal-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   </style>
 </head>
 
 <body class="bg-[#111] text-white">
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 shadow-lg w-full py-3 text-center border-b border-gray-800 hidden md:flex justify-between items-center px-8 bg-[#111] text-white">
-  <img class="w-16 h-16" src="./logo.png" alt="">
+  <header
+    class="fixed top-0 left-0 right-0 z-50 shadow-lg w-full py-3 text-center border-b border-gray-800 hidden md:flex justify-between items-center px-8 bg-[#111] text-white">
+    <img class="w-16 h-16" src="./logo.png" alt="">
 
-  <nav class="flex flex-row gap-8 uppercase text-sm tracking-wide">
-    <a href="#" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
-      Home
-    </a>
-    <a href="./index.html" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
-      Product
-    </a>
-    <a href="#" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
-      Cart
-    </a>
-    <a href="#" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
-      About
-    </a>
-    <a href="#" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
-      Contact
-    </a>
-  </nav>
-</header>
+    <nav class="flex flex-row gap-8 uppercase text-sm tracking-wide">
+      <a href="#"
+        class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+        Home
+      </a>
+      <a href="./index.html"
+        class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+        Product
+      </a>
+      <a href="#"
+        class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+        Cart
+      </a>
+      <a href="#"
+        class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+        About
+      </a>
+      <a href="#"
+        class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+        Contact
+      </a>
+    </nav>
+  </header>
 
-   <header
+  <header
     class="md:hidden fixed bottom-0 left-0 right-0 bg-[#111] text-white border-t border-gray-800 shadow-lg px-4 py-2 flex justify-around items-center z-50">
     <nav class="flex justify-between w-full max-w-md mx-auto text-xs font-medium">
       <a href="#" class="flex flex-col items-center hover:text-blue-500 transition">
@@ -62,127 +106,14 @@
     </nav>
   </header>
 
+  <div id="loading" class="flex flex-col items-center justify-center min-h-[60vh]">
+    <div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+    <p class="mt-4 text-gray-400 text-sm">Loading products...</p>
+  </div>
+
   <!-- Product Grid -->
-  <section class="mt-4 md:mt-28 max-w-4xl mx-auto px-6 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  gap-6 md:gap-12">
-    
-    <!-- Product Card -->
-    <div class="flex flex-col">
-      <a href="./detail.html">
-        <img src="https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$44</p>
-        <p class="text-gray-300 text-sm leading-tight">Majestic Mountain Graphic T-Shirt</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-       <a href="./detail.html">
-         <img src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png" alt=""
-         class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-         <p class="text-gray-200 text-lg">$10</p>
-         <p class="text-gray-300 text-sm leading-tight">Classic Red Pullover Hoodie</p>
-        </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$69</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Heather Gray Hoodie</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$90</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Grey Hooded Sweatshirt</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$79</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Black Hooded Sweatshirt</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$25</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Comfort Fit Joggers</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$79</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Comfort Drawstring Joggers</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$98</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$98</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$98</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$98</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col">
-      <a href="./detail.html">
-
-        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
-        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
-        <p class="text-gray-200 text-lg">$98</p>
-        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
-      </a>
-    </div>
+  <section id="productGrid"
+    class="mt-4 md:mt-28 max-w-4xl mx-auto px-6 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  gap-6 md:gap-12">
   </section>
 
   <!-- Footer -->
@@ -190,11 +121,69 @@
     © 2025 Online Shopping
   </footer>
 
-   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
+    const loadingEl = document.getElementById('loading');
+    const productGrid = document.getElementById('productGrid');
 
+    async function fetchProducts() {
+      try {
+        const res = await fetch('https://fakestoreapi.com/products');
+        const products = await res.json();
 
+        loadingEl.classList.add('hidden');
+        productGrid.classList.remove('hidden');
+        productGrid.innerHTML = '';
+
+        products.forEach(product => {
+          const card = document.createElement('div');
+          card.className = 'flex flex-col group cursor-pointer';
+
+          // Check if title is long (more than 30 characters)
+          const isLongTitle = product.title.length > 30;
+
+          // Create title HTML based on length
+          let titleHTML;
+          if (isLongTitle) {
+            // For long titles, create scrolling text with duplicate for seamless loop
+            titleHTML = `
+              <div class="scroll-container">
+                <div class="scroll-text">
+                  ${product.title}
+                </div>
+              </div>
+            `;
+          } else {
+            // For short titles, use normal text
+            titleHTML = `
+              <p class="normal-text">${product.title}</p>
+            `;
+          }
+
+          card.innerHTML = `
+            <a href="./detail.html?id=${product.id}">
+              <img src="${product.image}" alt="${product.title}"
+                class="w-full h-42 object-contain mb-3 group-hover:opacity-80 transition" />
+              <p class="text-gray-200 text-lg">$${product.price}</p>
+              <div class="text-gray-400 text-sm group-hover:text-white">
+                ${titleHTML}
+              </div>
+            </href=>
+          `;
+
+          productGrid.appendChild(card);
+        });
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        productGrid.innerHTML = `
+          <p class="col-span-full text-center text-red-400">⚠️ Failed to load products. Please try again later.</p>
+        `;
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', fetchProducts);
   </script>
 </body>
+
 </html>

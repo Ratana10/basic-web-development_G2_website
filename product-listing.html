@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — Simple Dark Grid</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-[#111] text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 shadow-lg w-full py-3 text-center border-b border-gray-800 hidden md:flex justify-between items-center px-8 bg-[#111] text-white">
+  <img class="w-16 h-16" src="./logo.png" alt="">
+
+  <nav class="flex flex-row gap-8 uppercase text-sm tracking-wide">
+    <a href="#" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+      Home
+    </a>
+    <a href="./product-listing.html" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+      Product
+    </a>
+    <a href="#" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+      Cart
+    </a>
+    <a href="#" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+      About
+    </a>
+    <a href="#" class="relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-0 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">
+      Contact
+    </a>
+  </nav>
+</header>
+
+   <header
+    class="md:hidden fixed bottom-0 left-0 right-0 bg-[#111] text-white border-t border-gray-800 shadow-lg px-4 py-2 flex justify-around items-center z-50">
+    <nav class="flex justify-between w-full max-w-md mx-auto text-xs font-medium">
+      <a href="#" class="flex flex-col items-center hover:text-blue-500 transition">
+        <i data-lucide="home" class="w-5 h-5 mb-1"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="flex flex-col items-center hover:text-blue-500 transition">
+        <i data-lucide="shopping-cart" class="w-5 h-5 mb-1"></i>
+        <span>Cart</span>
+      </a>
+      <a href="./product-listing.html" class="flex flex-col items-center hover:text-blue-500 transition">
+        <i data-lucide="shirt" class="w-5 h-5 mb-1"></i>
+        <span>Product</span>
+      </a>
+      <a href="#" class="flex flex-col items-center hover:text-blue-500 transition">
+        <i data-lucide="info" class="w-5 h-5 mb-1"></i>
+        <span>About</span>
+      </a>
+      <a href="#" class="flex flex-col items-center hover:text-blue-500 transition">
+        <i data-lucide="phone" class="w-5 h-5 mb-1"></i>
+        <span>Contact</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Product Grid -->
+  <section class="mt-4 md:mt-28 max-w-4xl mx-auto px-6 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  gap-6 md:gap-12">
+    
+    <!-- Product Card -->
+    <div class="flex flex-col">
+      <a href="./detail.html">
+        <img src="https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$44</p>
+        <p class="text-gray-300 text-sm leading-tight">Majestic Mountain Graphic T-Shirt</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+       <a href="./detail.html">
+         <img src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png" alt=""
+         class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+         <p class="text-gray-200 text-lg">$10</p>
+         <p class="text-gray-300 text-sm leading-tight">Classic Red Pullover Hoodie</p>
+        </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$69</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Heather Gray Hoodie</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$90</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Grey Hooded Sweatshirt</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$79</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Black Hooded Sweatshirt</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$25</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Comfort Fit Joggers</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$79</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Comfort Drawstring Joggers</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$98</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$98</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$98</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$98</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
+      </a>
+    </div>
+
+    <div class="flex flex-col">
+      <a href="./detail.html">
+
+        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt=""
+        class="w-full h-48 object-contain mb-3 hover:opacity-90 transition" />
+        <p class="text-gray-200 text-lg">$98</p>
+        <p class="text-gray-300 text-sm leading-tight">Classic Red Jogger Sweatpants</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 text-center text-gray-500 border-t border-gray-800 text-sm md:mb-4 mb-12">
+    © 2025 Online Shopping
+  </footer>
+
+   <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+
+  </script>
+</body>
+</html>

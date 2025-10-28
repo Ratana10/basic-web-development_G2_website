@@ -162,15 +162,27 @@
           }
 
           card.innerHTML = `
-            <a href="./detail.html?id=${product.id}">
-              <img src="${product.image}" alt="${product.title}"
-                class="w-full h-42 object-contain mb-3 group-hover:opacity-80 transition" />
-              <p class="text-gray-200 text-lg">$${product.price}</p>
-              <div class="text-gray-400 text-sm group-hover:text-white">
-                ${titleHTML}
-              </div>
-            </href=>
-          `;
+          <a href="./detail.html?id=${product.id}" class="group block">
+            <div class="relative w-full h-42 mb-3">
+              <img
+                src="${product.image}"
+                alt="${product.title}"
+                class="object-contain w-full h-full group-hover:opacity-80 transition"
+              />
+
+              <!-- Discount badge on top-right -->
+              <span
+                class="absolute top-1 right-1 inline-flex items-center gap-x-1.5 py-1 px-2.5 rounded-full text-xs font-medium bg-red-100 text-red-800"
+              >
+                30% OFF
+              </span>
+            </div>
+
+            <p class="text-gray-200 text-lg mt-2">$${product.price}</p>
+            <div class="text-gray-400 text-sm group-hover:text-white">
+              ${titleHTML}
+            </div>
+          </a>`;
 
           productGrid.appendChild(card);
         });
